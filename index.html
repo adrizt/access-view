@@ -1,24 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Preview OK</title>
+  <meta charset="UTF-8">
+  <title>Loading...</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ================= OG PREVIEW ================= -->
 
-<!-- OPEN GRAPH -->
-<meta property="og:title" content="Test Preview">
-<meta property="og:description" content="Harusnya muncul normal">
-<meta property="og:type" content="website">
+  <!-- Gambar preview (random tapi valid & stabil) -->
+  <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
 
-<meta property="og:image" content="https://i.imgur.com/2jVzv4U.jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <!-- Judul -->
+  <meta property="og:title" content="Acces">
 
-<meta name="robots" content="index, follow">
+  <!-- Deskripsi -->
+  <meta property="og:description" content="Tap to continue...">
+
+  <!-- URL (isi domain kamu nanti kalau sudah ada) -->
+  <meta property="og:url" content="https://example.com">
+
+  <!-- Tipe -->
+  <meta property="og:type" content="website">
+
+  <!-- Ukuran biar FB cepat detect -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Tambahan biar aman -->
+  <meta name="twitter:card" content="summary_large_image">
+
 </head>
 
 <body>
-OK
+
+<script>
+  // Delay biar Facebook sempat scrape OG
+  setTimeout(function() {
+    window.location.href = "https://example.com"; // ganti ke smartlink kamu nanti
+  }, 2000);
+</script>
+
 </body>
 </html>
